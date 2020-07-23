@@ -45,3 +45,6 @@ combo2 <- group_by(combo1,activity,subjectid)
 #summarizing the dataset with the average of each variable
 summary <- summarise_all(combo2,mean,na.rm=TRUE)
 tidyset <- as.data.frame(summary)
+
+#writing the tidy dataset
+write.table(tidyset,"tidydata.txt", row.names = FALSE)
